@@ -37,7 +37,7 @@ public class CRCImplementation {
             case 3:
                 String generatorrr = "10001000000100001";
                 System.out.println("The generator polynomial is:");
-                System.out.println("generatorrr");
+                System.out.println(generatorrr);
                 String codeee = message;
                 codeee = message + div(codeee, generatorrr);
                 System.out.println("The transmitted message is:" + codeee);
