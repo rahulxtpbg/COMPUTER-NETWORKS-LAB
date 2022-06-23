@@ -19,11 +19,13 @@ class Receiver {
         String str = "Exit";
 
         while (temp.compareTo(str) != 0) {
+            Thread.sleep(1000);
             temp = br.readLine();
             if (temp.compareTo(str) == 0) {
                 break;
             }
             System.out.println("Frame" + " " + temp + " " + "received");
+            Thread.sleep(500);
             ps.println("Received");
         }
 
