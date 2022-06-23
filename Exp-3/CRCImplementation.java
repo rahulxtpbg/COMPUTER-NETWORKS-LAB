@@ -43,7 +43,6 @@ public class CRCImplementation {
                 System.out.println("The transmitted message is:" + codeee);
                 break;
         }
-
     }
 
     static String div(String num1, String num2) {
