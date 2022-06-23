@@ -4,8 +4,8 @@ import java.net.*;
 
 class Sender {
     public static void main(String args[]) throws Exception {
-        Sender se = new Sender();
-        se.run();
+        Sender s = new Sender();
+        s.run();
     }
 
     public void run() throws Exception {
@@ -21,6 +21,16 @@ class Sender {
             }
             System.out.println("Frame" + " " + i + " " + "has been sent");
             ps.println(i);
+
+            BufferedReader br=new BufferedReader(new InputStreamReader(s.getInputStream()));
+            String ack=br.readLine();
+            if (ack!=null){
+                System.out.println("Acknowledgement received");
+                Thread.sleep(3000);
+            }
+            else{
+                ps.println(i);
+            }
         }
     }
 }
