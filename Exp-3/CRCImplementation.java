@@ -1,48 +1,16 @@
 import java.io.*;
 import java.util.*;
 
-public class CRCImplementation {
-    public static void main(String args[]) throws IOException {
+class CRCImplementation {
+    public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the message to be transmitted:");
-
+        System.out.println("Enter the message to be transmited:");
         String message = br.readLine();
-        System.out.println("\nThe message to be transmitted is:");
-        System.out.println(message);
-
-        Scanner sc = new Scanner(System.in);
-        int choice;
-        System.out.println("\nEnter your choice:\n1.Implement CRC-12\n2.Implement CRC-16\n3.Implement CRC-CCIP");
-        choice = sc.nextInt();
-
-        switch (choice) {
-            case 1:
-                String generator = "1100000001111";
-                System.out.println("The generator polynomial is:");
-                System.out.println(generator);
-                String code = message;
-                code = message + div(code, generator);
-                System.out.println("The transmitted message is:" + code);
-                break;
-
-            case 2:
-                String generatorr = "11000000000000101";
-                System.out.println("The generator polynomial is:");
-                System.out.println(generatorr);
-                String codee = message;
-                codee = message + div(codee, generatorr);
-                System.out.println("The transmitted message is:" + codee);
-                break;
-
-            case 3:
-                String generatorrr = "10001000000100001";
-                System.out.println("The generator polynomial is:");
-                System.out.println(generatorrr);
-                String codeee = message;
-                codeee = message + div(codeee, generatorrr);
-                System.out.println("The transmitted message is:" + codeee);
-                break;
-        }
+        System.out.println("Enter the generator polynomial:");
+        String generator = br.readLine();
+        String mSent = message;
+        mSent = message + div(message, generator);
+        System.out.println("The transmitted message is:" + " " + mSent);
     }
 
     static String div(String num1, String num2) {
